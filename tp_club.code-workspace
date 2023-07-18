@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../tp_club"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "tp_club_final"
+	}
+}
