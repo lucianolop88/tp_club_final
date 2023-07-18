@@ -41,7 +41,9 @@ function inicio(){
     btnBuscarDNI.addEventListener("click",buscarPorDNI);
     btnAbonarCuota.addEventListener("click", abonarCuota);
     btnAbonarCuota.disabled = true;
-    globalThis.socios = JSON.parse(localStorage.getItem("listaSocios"));
+    if (localStorage.getItem("listaSocios")!=null){
+        globalThis.socios = JSON.parse(localStorage.getItem("listaSocios"));
+    }
     cuadroErrores.innerHTML="";
     actualizarBotones();
     cambiarABarraCodSocio();

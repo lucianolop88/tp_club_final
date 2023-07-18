@@ -40,7 +40,10 @@ function inicio(){
     radioDNI.addEventListener("click",cambiarABarraDNI);
     btnBuscarCodSocio.addEventListener("click",buscarPorCodSocio);
     btnBuscarDNI.addEventListener("click",buscarPorDNI);
-    globalThis.socios = JSON.parse(localStorage.getItem("listaSocios"));
+    if (localStorage.getItem("listaSocios")!=null){
+        globalThis.socios = JSON.parse(localStorage.getItem("listaSocios"));
+    }
+    
     cuadroErrores.innerHTML="";
     actualizarBotones();
     cambiarABarraCodSocio();
