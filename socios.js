@@ -47,11 +47,7 @@ function inicio(){
     cuadroErrores.innerHTML="";
     actualizarBotones();
     cambiarABarraCodSocio();
-    //  inputCategoria.innerHTML += `<option>Nueva2</option>`;
-  //  inputCategoria.innerHTML += `<option>Nueva3</option>`;
-   // inputCategoria.options[inputCategoria.options.length] = new Option('Text 1', 'Value1');
- //   inputCategoria.options[inputCategoria.options.length] = new Option('Text 2', 'Value2');
-   // inputCategoria.options[inputCategoria.options.length] = new Option('Text 3');
+   
 
 };
 

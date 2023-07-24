@@ -6,11 +6,11 @@ var inputDireccion = document.getElementById("direccionSocio");
 var inputDNI = document.getElementById("dniSocio");
 var inputCategoria = document.getElementById("categoriaSocio");
 var outPutCodSocio = document.getElementById("codSocio");
-var inputCuota = document.getElementById("cuotaAlDia");
 var inputCodBuscado = document.getElementById("codBuscado");
 var inputDNIBuscado = document.getElementById("dniBuscado");
 var factura = document.getElementById("factura");
 var total = document.getElementById("total");
+var selectMes = document.getElementById("mesAPagar");
 
 
 
@@ -29,9 +29,11 @@ var btnAbonarCuota = document.getElementById("abonarCuota");
 var socio = {};
 var socios = new Array();
 var indice = -1;
+const meses = ["Enero","Febreo","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 
 function inicio(){
+    const diaActual = new Date();
     
     btnAnterior.addEventListener("click", socioAnterior);
     btnSiguiente.addEventListener("click", socioSiguiente);
@@ -48,6 +50,14 @@ function inicio(){
     actualizarBotones();
     cambiarABarraCodSocio();
 
+    for (var i = diaActual.getMonth() ; i<meses.length ; i++){
+        selectMes.innerHTML += `<option>${meses[i]}</option>`;
+    }
+ //  inputCategoria.innerHTML += `<option>Nueva2</option>`;
+  //  inputCategoria.innerHTML += `<option>Nueva3</option>`;
+   // inputCategoria.options[inputCategoria.options.length] = new Option('Text 1', 'Value1');
+ //   inputCategoria.options[inputCategoria.options.length] = new Option('Text 2', 'Value2');
+   // inputCategoria.options[inputCategoria.options.length] = new Option('Text 3');
 };
 
 function buscarPorCodSocio(){
@@ -303,10 +313,6 @@ function imprimirDatosSocio(socio){
     inputDNI.value = socio.dni;
     inputCategoria.value = socio.categoria;
     outPutCodSocio.value = socio.codSocio;
-    if ( socio.cuotaAlDia == true){
-        inputCuota.value = "No tiene deuda"
-    }else{
-        inputCuota.value = "Adeuda la cuota"
-    };
+ 
          
 }
